@@ -1,42 +1,72 @@
 [
   {
     "id": "1",
-    "slug": "zero-to-pr",
-    "title": "Zero to Pull Request",
-    "date": "Nov 21, 2025, 10:00 PM",
+    "slug": "git-session",
+    "title": "Git Session",
+    "date": "Sep 11, 2026, 8:00 PM",
     "status": "past",
-    "description": "Explore the world of open source. World, meet VOSC!"
+    "description": "Learn the basics of version control and Git workflows. This session introduces students to Git, GitHub, repository management, and collaborative development.",
+    "poster": "/git-session/poster.jpeg",
+    "gallery": [
+      "/git-session/img1.jpeg",
+      "/git-session/img2.jpeg",
+      "/git-session/img3.jpeg",
+      "/git-session/img4.jpeg"
+    ]
   },
   {
     "id": "2",
-    "slug": "git-workshop",
-    "title": "Git Fundamentals Workshop",
-    "date": "Jan 25, 2026, 3:00 PM",
+    "slug": "domain-discovery",
+    "title": "Domain Discovery",
+    "date": "Oct 5, 2026, 1:00 PM",
     "status": "past",
-    "description": "Learn the basics of version control and git workflows."
+    "description": "Find your domain and begin your open-source journey. Domain Discovery helps students explore different technical domains, discover their interests, and find opportunities to contribute to open source.",
+    "poster": "/domain-discovery/poster.png",
+    "gallery": [
+      "/domain-discovery/img1.jpg",
+      "/domain-discovery/img2.jpg",
+      "/domain-discovery/img3.jpg",
+      "/domain-discovery/img4.jpg"
+    ],
+    "winners": [
+      {
+        "teamName": "To Be Announced",
+        "members": [],
+        "position": "To Be Announced"
+      }
+    ],
+    "instagram": "https://www.instagram.com/p/Dd_pqs3n4LE/?cplk=MTh4N2J4YXV5aWhvcw=="
   },
   {
     "id": "3",
-    "slug": "domain-discovery",
-    "title": "Domain Discovery",
-    "date": "Feb 7, 2026, 10:00 AM",
-    "status": "past",
-    "description": "Find your domain, build your open source journey."
+    "slug": "repoquest",
+    "title": "RepoQuest",
+    "date": "Oct 31, 2027, 8:00 PM",
+    "status": "upcoming",
+    "description": "Learn to navigate and understand large repositories and codebases."
   },
   {
     "id": "4",
-    "slug": "repoquest",
-    "title": "RepoQuest",
-    "date": "Mar 7, 2026, 8:00 PM",
-    "status": "past",
-    "description": "Learn to navigate and understand large repos and codebases. "
+    "slug": "proposal-craft",
+    "title": "ProposalCraft",
+    "date": "Mar 21, 2027, 02:30 PM",
+    "status": "upcoming",
+    "description": "Learn how to structure effective proposals."
   },
   {
     "id": "5",
-    "slug": "proposal-craft",
-    "title": "ProposalCraft",
-    "date": "Mar 16, 2026, 02:30 PM",
-    "status": "past",
-    "description": "Learn how to structure effective proposals."
+    "slug": "bug-blitz",
+    "title": "Bug Blitz",
+    "date": "Apr 4, 2027, 02:30 PM",
+    "status": "upcoming",
+    "description": "Learn how to identify and fix bugs efficiently."
+  },
+  {
+    "id": "6",
+    "slug": "great-merge",
+    "title": "The Great Merge",
+    "date": "Apr 21, 2027, 02:30 PM",
+    "status": "upcoming",
+    "description": "Learn how to perform successful code merges."
   }
 ]
