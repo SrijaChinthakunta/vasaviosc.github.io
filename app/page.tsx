@@ -5,6 +5,19 @@ import announcements from "@/data/announcements.json";
 import events from "@/data/events.json";
 
 export default function Home() {
+  const ongoingEvents = events.filter(
+    (event) => event.status === "ongoing"
+  );
+
+  const upcomingEvents = events.filter(
+    (event) => event.status === "upcoming"
+  );
+
+  const pastEvents = events
+    .filter((event) => event.status === "past")
+    .slice(-4)
+    .reverse();
+
   return (
     <main className="bg-white">
       {/* Hero Section */}
@@ -82,33 +95,63 @@ export default function Home() {
 
           <div className="mb-12" />
 
-          {/* Upcoming */}
+          {/* Ongoing Events */}
+          <div className="mb-16">
+            <h3 className="text-lg font-semibold mb-6 uppercase tracking-widest text-xs">
+              ongoing
+            </h3>
+
+            {ongoingEvents.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {ongoingEvents.map((event) => (
+                  <EventCard key={event.id} event={event} />
+                ))}
+              </div>
+            ) : (
+              <p className="text-sm text-gray-500">
+                No ongoing events right now.
+              </p>
+            )}
+          </div>
+
+          {/* Upcoming Events */}
           <div className="mb-16">
             <h3 className="text-lg font-semibold mb-6 uppercase tracking-widest text-xs">
               upcoming
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {events
-                .filter((e) => e.status === "upcoming")
-                .map((event) => <EventCard key={event.id} event={event} />)
-                .reverse()}
-            </div>
+            {upcomingEvents.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {upcomingEvents
+                  .map((event) => (
+                    <EventCard key={event.id} event={event} />
+                  ))
+                  .reverse()}
+              </div>
+            ) : (
+              <p className="text-sm text-gray-500">
+                No upcoming events right now.
+              </p>
+            )}
           </div>
 
-          {/* Past */}
+          {/* Past Events */}
           <div>
             <h3 className="text-lg font-semibold mb-6 uppercase tracking-widest text-xs">
               past
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {events
-                .slice(0, 4)
-                .filter((e) => e.status === "past")
-                .map((event) => <EventCard key={event.id} event={event} />)
-                .reverse()}
-            </div>
+            {pastEvents.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {pastEvents.map((event) => (
+                  <EventCard key={event.id} event={event} />
+                ))}
+              </div>
+            ) : (
+              <p className="text-sm text-gray-500">
+                No past events yet.
+              </p>
+            )}
           </div>
         </div>
       </section>
