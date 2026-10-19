@@ -15,7 +15,6 @@ export default async function EventDetailsPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
   const event = events.find((item) => item.slug === slug);
 
   if (!event) {
@@ -61,6 +60,40 @@ export default async function EventDetailsPage({
         </div>
       </section>
 
+      {/* Event Information */}
+      {(event.venue || event.teamSize || event.registrationFee) && (
+        <section className="py-12 px-4 border-b border-gray-200">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {event.venue && (
+              <div>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">
+                  Venue
+                </p>
+                <p className="font-semibold">{event.venue}</p>
+              </div>
+            )}
+
+            {event.teamSize && (
+              <div>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">
+                  Team Size
+                </p>
+                <p className="font-semibold">{event.teamSize}</p>
+              </div>
+            )}
+
+            {event.registrationFee && (
+              <div>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">
+                  Registration Fee
+                </p>
+                <p className="font-semibold">{event.registrationFee}</p>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* Official Event Poster */}
       {event.poster && (
         <section className="py-20 px-4">
@@ -84,6 +117,73 @@ export default async function EventDetailsPage({
                 className="w-full h-auto max-h-[800px] object-contain"
                 priority
               />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Hackathon Domains */}
+      {event.domains && event.domains.length > 0 && (
+        <section className="py-20 px-4 bg-gray-50 border-y border-gray-200">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              Explore Your Possibilities
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              Hackathon Domains
+            </h2>
+
+            <p className="text-gray-600 leading-7 mb-10 max-w-3xl">
+              Choose a domain that interests your team, identify a real-world
+              problem, and develop your own innovative solution.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {event.domains.map((domain, index) => (
+                <div
+                  key={domain}
+                  className="border border-gray-200 bg-white p-6"
+                >
+                  <p className="text-xs text-gray-500 tracking-widest mb-3">
+                    DOMAIN {String(index + 1).padStart(2, "0")}
+                  </p>
+
+                  <h3 className="text-lg font-bold">{domain}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Prize Details */}
+      {event.prizes && event.prizes.length > 0 && (
+        <section className="py-20 px-4">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              Rewards & Recognition
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-10">
+              Prize Pool
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+              {event.prizes.map((prize) => (
+                <div
+                  key={prize.position}
+                  className="border border-gray-200 p-8 text-center"
+                >
+                  <p className="text-sm text-gray-500 mb-4">
+                    {prize.position}
+                  </p>
+
+                  <p className="text-3xl md:text-4xl font-bold">
+                    {prize.amount}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -215,6 +315,40 @@ export default async function EventDetailsPage({
             >
               View Instagram Post ↗
             </a>
+          </div>
+        </section>
+      )}
+
+      {/* Registration Section - At the Bottom */}
+      {event.registrationUrl && (
+        <section className="py-16 px-4 bg-gray-50 border-y border-gray-200">
+          <div className="max-w-5xl mx-auto text-center">
+            <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              Be Part of the Experience
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              Ready to Join?
+            </h2>
+
+            <p className="text-gray-600 mb-8">
+              Register for {event.title} and bring your ideas to life.
+            </p>
+
+            <a
+              href={event.registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-black text-white px-10 py-4 text-sm font-medium border border-black hover:bg-white hover:text-black transition-colors"
+            >
+              Register Now ↗
+            </a>
+
+            {event.registrationDeadline && (
+              <p className="mt-4 text-sm text-red-600">
+                Registration closes on {event.registrationDeadline}
+              </p>
+            )}
           </div>
         </section>
       )}

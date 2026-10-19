@@ -39,6 +39,43 @@
   },
   {
     "id": "3",
+    "slug": "openquest",
+    "title": "OpenQuest — Innovation Challenge",
+    "date": "Oct 27, 2026, 10:00 AM – 4:00 PM",
+    "status": "ongoing",
+    "description": "OpenQuest is a hackathon organized by Vasavi Open Source Community (VOSC) at Vasavi College of Engineering. Form teams of 3–4 members, choose from six technology domains, identify a real-world problem, and build an innovative working prototype. The event encourages open-source collaboration, responsible innovation, and practical problem-solving.",
+    "poster": "/openquest/poster.jpeg",
+    "gallery": [],
+    "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeOdUTu8shPot39K4X97GDLA-9VHPqHUusytOad4oih8vBXTA/viewform",
+    "registrationDeadline": "October 25, 2026",
+    "venue": "Vasavi College of Engineering",
+    "teamSize": "3–4 members",
+    "registrationFee": "₹400 per team",
+    "prizes": [
+      {
+        "position": "First Prize",
+        "amount": "₹10,000"
+      },
+      {
+        "position": "Second Prize",
+        "amount": "₹7,500"
+      },
+      {
+        "position": "Third Prize",
+        "amount": "₹5,000"
+      }
+    ],
+    "domains": [
+      "Agentic AI in Healthcare",
+      "Developer Tooling & Open-Source Security",
+      "Agentic AI in Education & Learning",
+      "Agriculture & Food Systems",
+      "Climate, Smart Cities & Disaster Response",
+      "Responsible AI, Privacy, Trust & Accessibility"
+    ]
+  },
+  {
+    "id": "4",
     "slug": "repoquest",
     "title": "RepoQuest",
     "date": "Oct 31, 2027, 8:00 PM",
@@ -46,7 +83,7 @@
     "description": "Learn to navigate and understand large repositories and codebases."
   },
   {
-    "id": "4",
+    "id": "5",
     "slug": "proposal-craft",
     "title": "ProposalCraft",
     "date": "Mar 21, 2027, 02:30 PM",
@@ -54,7 +91,7 @@
     "description": "Learn how to structure effective proposals."
   },
   {
-    "id": "5",
+    "id": "6",
     "slug": "bug-blitz",
     "title": "Bug Blitz",
     "date": "Apr 4, 2027, 02:30 PM",
@@ -62,7 +99,7 @@
     "description": "Learn how to identify and fix bugs efficiently."
   },
   {
-    "id": "6",
+    "id": "7",
     "slug": "great-merge",
     "title": "The Great Merge",
     "date": "Apr 21, 2027, 02:30 PM",

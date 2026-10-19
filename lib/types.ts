@@ -12,12 +12,27 @@ export interface Event {
   date: string;
   status: string;
   description: string;
-  poster: string;
-  gallery: string[];
+  poster?: string;
+  gallery?: string[];
+
   winners?: {
     teamName: string;
     members: string[];
     position: string;
   }[];
+
   instagram?: string;
+
+  registrationUrl?: string;
+  registrationDeadline?: string;
+  venue?: string;
+  teamSize?: string;
+  registrationFee?: string;
+
+  prizes?: {
+    position: string;
+    amount: string;
+  }[];
+
+  domains?: string[];
 }
